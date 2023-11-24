@@ -1,0 +1,18 @@
+@media screen and (max-width: 900px) {
+    .container__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    .header_sections {
+        margin-top: 1rem;
+        width: 80% ;
+    }
+
+    .header_socials {
+        display: none;
+    }
+}
