@@ -5,14 +5,20 @@
         align-items: center;
         justify-content: center;
         height: auto;
+        margin: 0;
+    }
+
+    .header_logo {
+        margin: 2px ;
     }
 
     .header_sections {
-        margin-top: 1rem;
+        margin-top: 5px;
         width: 80% ;
     }
 
     .header_socials {
         display: none;
     }
+
 }
