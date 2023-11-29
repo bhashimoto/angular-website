@@ -4,9 +4,9 @@
     </div>
     <div class="header_sections">
         <ul>
-            <li class="section current"><a class="section_link" routerLink="">Home</a></li>
-            <li class="section"><a class="section_link" routerLink="projects">Projetos</a></li>
-            <li class="section"><a class="section_link" routerLink="blog">Blog</a></li>
+            <li class="section" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}"><a class="section_link" routerLink="">Home</a></li>
+            <li class="section" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}"><a class="section_link" routerLink="projects" >Projetos</a></li>
+            <li class="section" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}"><a class="section_link" routerLink="blog" >Blog</a></li>
         </ul>
     </div>
     <div class="header_socials">
