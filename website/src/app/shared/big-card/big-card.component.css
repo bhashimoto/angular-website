@@ -11,7 +11,7 @@
 }
 
 .image__container {
-    width: 50%;
+    width: 45%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,6 +23,13 @@
 }
 
 .info__container {
-    max-width: 50%;
-    margin: 5px;
+    max-width: 55%;
+    margin-left: 1rem;
+
+}
+
+.project_date {
+    font-style: italic;
+    color: rgb(150, 150, 150);
+    font-size: small;
 }
