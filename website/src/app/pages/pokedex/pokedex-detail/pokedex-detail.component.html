@@ -1,0 +1,102 @@
+<div class="pokemon__container {{ pokemonData.types[0] }}">
+    <div class="image__container">
+        <div class="image_title">
+            <h2 class="name">{{ pokemonData.name }}</h2>
+            <span class="id">{{ pokemonData.id }}</span>
+        </div>
+        <div class="types">
+            <ul class="types__list">
+                <li class="type {{ type }}" *ngFor="let type of pokemonData.types">
+                    <span>{{ type }}</span>
+                </li>
+            </ul>
+        </div>
+        <img class="image" src="{{ pokemonData.image }}" alt="">
+    </div>
+    <div class="pokemon_information__container">
+        <div class="pokemon_information__header">
+            <ul class="header_options">
+                <li>Stats</li>
+                <li>|</li>
+                <li>Moves</li>
+            </ul>
+        </div>
+        <div class="pokemon_information__body">
+            <div class="pokemon_stats_table__container">
+                <table class="pokemon_stats_table">
+                    <tr class="pokemon_stats_row">
+                        <td class="stat_name">HP</td>
+                        <td class="stat_value">{{ pokemonData.stats.hp }}</td>
+                        <td class="stat_bar">
+                            <div class="stat_bar_bg">
+                                <div class="stat_bar_value"
+                                    style="width: {{ calculateStatFill(pokemonData.stats.hp) }}%">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="pokemon_stats_row">
+                        <td class="stat_name">Attack</td>
+                        <td class="stat_value">{{ pokemonData.stats.attack }}</td>
+                        <td class="stat_bar">
+                            <div class="stat_bar_bg">
+                                <div class="stat_bar_value"
+                                    style="width: {{ calculateStatFill(pokemonData.stats.attack) }}%">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="pokemon_stats_row">
+                        <td class="stat_name">Defense</td>
+                        <td class="stat_value">{{ pokemonData.stats.defense }}</td>
+                        <td class="stat_bar">
+                            <div class="stat_bar_bg">
+                                <div class="stat_bar_value"
+                                    style="width: {{ calculateStatFill(pokemonData.stats.defense) }}%">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="pokemon_stats_row">
+                        <td class="stat_name">Sp. Attack</td>
+                        <td class="stat_value">{{ pokemonData.stats.special_attack }}</td>
+                        <td class="stat_bar">
+                            <div class="stat_bar_bg">
+                                <div class="stat_bar_value"
+                                    style="width: {{ calculateStatFill(pokemonData.stats.special_attack) }}%">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="pokemon_stats_row">
+                        <td class="stat_name">Sp. Defense</td>
+                        <td class="stat_value">{{ pokemonData.stats.special_defense }}</td>
+                        <td class="stat_bar">
+                            <div class="stat_bar_bg">
+                                <div class="stat_bar_value"
+                                    style="width: {{ calculateStatFill(pokemonData.stats.special_defense) }}%">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="pokemon_stats_row">
+                        <td class="stat_name">Speed</td>
+                        <td class="stat_value">{{ pokemonData.stats.speed }}</td>
+                        <td class="stat_bar">
+                            <div class="stat_bar_bg">
+                                <div class="stat_bar_value"
+                                    style="width: {{ calculateStatFill(pokemonData.stats.speed) }}%">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="pokemon_stats_moves__container">
+                <ul class="pokemon_stats_moves_list">
+                    <li class="pokemon_stats_move" *ngFor="let move of pokemonData.moves">{{move}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
