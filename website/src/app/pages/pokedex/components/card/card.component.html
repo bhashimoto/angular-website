@@ -1,7 +1,18 @@
-<div class="card__container">
-    <h2>Pokemon</h2>
-    <ul>
-        <li>Fire</li>
-        <li>Flying</li>
-    </ul>   
+<div class="card__container {{ pokemonData.types[0] }} ">
+    <a routerLink="{{ pokemonData.id }}">
+        <div class="card_header">
+            <h3 class="pokemon-id">#{{ pokemonData.id }}</h3>
+            <h2 class="pokemon-name">{{pokemonData.name}}</h2>
+        </div>
+        <div class="card_body">
+            <div class="types__container">
+                <ul class="types">
+                    <li *ngFor="let type of pokemonData.types" class="type {{ type }}">{{ type }}</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="{{ pokemonData.image }}" alt="{{ pokemonData.name }}">
+            </div>
+        </div>
+    </a>
 </div>

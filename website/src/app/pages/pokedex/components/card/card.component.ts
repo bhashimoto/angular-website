@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { pokemon } from '../../api/pokedex-api-handler';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css','../../types.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, OnChanges {
+  @Input() pokemonData:pokemon|any;
 
   constructor() { }
-
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    this.pokemonData = changes['pokemonData'].currentValue;
   }
+
+  ngOnInit(): void{
+    console.log(this.pokemonData)
+  }
+
+  
 
 }

@@ -1,19 +1,8 @@
 <div class="pokedex__container">
     <ul class="pokemon_list">
-        <li class="pokemon_list_item">
-            <app-card></app-card>
-        </li>
-        <li class="pokemon_list_item">
-            <app-card></app-card>
-        </li>
-        <li class="pokemon_list_item">
-            <app-card></app-card>
-        </li>
-        <li class="pokemon_list_item">
-            <app-card></app-card>
-        </li>
-        <li class="pokemon_list_item">
-            <app-card></app-card>
+        <li *ngFor="let pokemon of pokemons" class="pokemon_list_item">
+            <app-card [pokemonData]="pokemon" ></app-card>
         </li>
     </ul>
+    <button (click)="loadMore()" class="load-more">Load more</button>
 </div>

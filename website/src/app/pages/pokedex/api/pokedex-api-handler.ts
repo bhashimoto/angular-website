@@ -19,9 +19,31 @@ type pokemon = {
     moves: string[];
 };
 
-async function getPokemon(id:string):Promise<pokemon>{
-    const url = `${baseURL}pokemon/${id}`;
-    console.log(url);
+async function getPokemonList(limit:number, offset:number):Promise<[next: string, pokemons: pokemon[]]> {
+    const url = `${baseURL}pokemon?limit=${limit.toString()}&offset=${offset.toString()}`;
+    //console.log(url);
+    return await getPokemonListFromUrl(url);
+}
+
+async function getPokemonListFromUrl(url:string):Promise<[next: string, pokemons: pokemon[]]>{
+    var ret:pokemon[] = [];
+
+    const jsonData = await (await fetch(url)).json();
+    //console.log(jsonData);
+    var pokemonList:string[] = jsonData.results?.map((result: { url: string; }):string => {
+        return result.url;
+    })
+    
+    ret = await  Promise.all(pokemonList.map(async (url) => {
+        return await getPokemon(url);
+    }));
+
+    return [jsonData.next, ret];
+}
+
+async function getPokemon(input:string | number):Promise<pokemon>{
+    const url = (typeof input === "number") ?`${baseURL}pokemon/${input}` : input ;
+    //console.log(url);
     const jsonData = await (await fetch(url)).json();
     
     const data:pokemon = {
@@ -52,4 +74,4 @@ async function getPokemon(id:string):Promise<pokemon>{
 
 //getPokemon('1');
 export type { pokemon };
-export { getPokemon };
+export { getPokemon, getPokemonList, getPokemonListFromUrl };

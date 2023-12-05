@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-pokedex-detail',
   templateUrl: './pokedex-detail.component.html',
-  styleUrls: ['./pokedex-detail.component.css']
+  styleUrls: ['./pokedex-detail.component.css', '../types.css'],
 })
 export class PokedexDetailComponent implements OnInit {
   pokemonData:pokemon;
@@ -37,7 +37,7 @@ export class PokedexDetailComponent implements OnInit {
       this.id = value.get("id") as string;
     });
 
-    getPokemon(this.id)
+    getPokemon(parseInt(this.id))
       .then((value) => this.pokemonData = value);
     
   }
