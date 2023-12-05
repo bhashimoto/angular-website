@@ -66,7 +66,9 @@ img.image {
     flex: 1;
     display: flex;
 }
-
+.responsive {
+    visibility: hidden;
+}
 .pokemon_stats_table__container {
     width: 100%;
 }

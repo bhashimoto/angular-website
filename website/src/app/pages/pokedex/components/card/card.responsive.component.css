@@ -1,0 +1,6 @@
+@media screen and (max-width: 450px){
+    .card__container {
+        padding: 5% 10%;
+        justify-content: space-evenly;
+    }
+}

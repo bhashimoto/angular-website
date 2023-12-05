@@ -4,7 +4,9 @@ import { pokemon, getPokemonList, getPokemonListFromUrl } from '../api/pokedex-a
 @Component({
   selector: 'app-pokedex-main',
   templateUrl: './pokedex-main.component.html',
-  styleUrls: ['./pokedex-main.component.css', '../types.css'],
+  styleUrls: ['./pokedex-main.component.css',
+              './pokedex-main.responsive.component.css',
+              '../types.css'],
 })
 export class PokedexMainComponent implements OnInit {
   pokemons:pokemon[] = [];

@@ -1,21 +1,21 @@
 <div class="big_card__container">
     <div class="image__container">
-        <img src="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder-1024x512.png" alt="">
+        <img src="{{ image }}" alt="">
     </div>
     <div class="info__container">
         <div class="info_title">
-            <h2>Project Title</h2>
+            <h2>{{ title }}</h2>
         </div>
         <div class="info_date">
-            <span class="project_date">2023-11-29</span>
+            <span class="project_date">{{ date }}</span>
         </div>
         <div class="info_description">
             <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor odio nec odio ultricies consequat. Phasellus sed malesuada purus. 
+                {{ description }}
             </span>
         </div>
         <div class="project_link">
-            <a href="">Read more >></a>
+            <a routerLink="/{{ link }}">Ir para projeto >></a>
         </div>
     </div>
 </div>

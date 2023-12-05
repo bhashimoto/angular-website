@@ -6,7 +6,9 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-pokedex-detail',
   templateUrl: './pokedex-detail.component.html',
-  styleUrls: ['./pokedex-detail.component.css', '../types.css'],
+  styleUrls: ['./pokedex-detail.component.css', 
+              './pokedex-detail.responsive.component.css',
+              '../types.css'],
 })
 export class PokedexDetailComponent implements OnInit {
   pokemonData:pokemon;

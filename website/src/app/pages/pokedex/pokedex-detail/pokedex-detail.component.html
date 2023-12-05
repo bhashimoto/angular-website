@@ -23,6 +23,7 @@
         </div>
         <div class="pokemon_information__body">
             <div class="pokemon_stats_table__container">
+                <h2 class="responsive">Stats</h2>
                 <table class="pokemon_stats_table">
                     <tr class="pokemon_stats_row">
                         <td class="stat_name">HP</td>
@@ -93,6 +94,7 @@
                 </table>
             </div>
             <div class="pokemon_stats_moves__container">
+                <h2 class="responsive">Moves</h2>
                 <ul class="pokemon_stats_moves_list">
                     <li class="pokemon_stats_move" *ngFor="let move of pokemonData.moves">{{move}}</li>
                 </ul>
